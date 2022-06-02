@@ -5,7 +5,7 @@ namespace AlgorithamProblems
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. End the Program");
+            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. Bubble Sort\n5. End the Program");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -56,6 +56,21 @@ namespace AlgorithamProblems
                     {
                         Console.WriteLine(item);
                     }
+                    break;
+                case 4:
+                    Console.WriteLine("Enter the Number of values to be given as input");
+                    int num = Convert.ToInt32(Console.ReadLine());
+                    int[] array = new int[num];
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        Console.WriteLine("Enter {0} Numbers for Bubble Sorting", num);
+                        array = Console.ReadLine().Split(",").Select(int.Parse).ToArray();
+                        break;
+                    }
+                    AlgorithmPrograms.BubbleSort bubble = new AlgorithmPrograms.BubbleSort();
+                    bubble.bubbleSort(array);
+                    Console.WriteLine("Sorted array");
+                    bubble.printArray(array);
                     break;
                 default:
                     break;
