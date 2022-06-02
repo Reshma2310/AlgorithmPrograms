@@ -5,7 +5,7 @@ namespace AlgorithamProblems
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. End the Program");
+            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. End the Program");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -40,6 +40,23 @@ namespace AlgorithamProblems
                         Console.WriteLine("Word found at " + "index " + result);
                     Console.WriteLine();
                         break;
+                case 3:
+                    Console.WriteLine("Enter the Number of words to be given as input");
+                    int no = Convert.ToInt32(Console.ReadLine());
+                    string[] names = new string[no];
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        Console.WriteLine("Enter {0} words", no);
+                        names = Console.ReadLine().Split(",");
+                        break;
+                    }
+                    AlgorithmPrograms.InsertionSort sort = new AlgorithmPrograms.InsertionSort();
+                    sort.InsertSort(names);
+                    foreach (var item in names)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    break;
                 default:
                     break;
             }
