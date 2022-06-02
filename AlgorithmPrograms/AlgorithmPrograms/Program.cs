@@ -5,7 +5,7 @@ namespace AlgorithamProblems
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. Bubble Sort\n5. Merge Sort\n6. End the Program");
+            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. Bubble Sort\n5. Merge Sort\n6. Anagram\n7. End the Program");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -79,6 +79,22 @@ namespace AlgorithamProblems
                     merge.sort(inputArr, 0, inputArr.Length - 1);
                     Console.WriteLine("\nSorted array");
                     merge.PrintArray(inputArr);
+                    break;
+                case 6:                                        
+                    Console.WriteLine("Enter first string");
+                    string input1 = Console.ReadLine();
+                    Console.WriteLine("Enter second string");
+                    string input2 = Console.ReadLine();
+                    AlgorithmPrograms.Anagram anagram = new AlgorithmPrograms.Anagram();                    
+                    if (anagram.AnagramProg(input1, input2) == true)
+                    {
+                        Console.WriteLine("Both string are anagram string.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Both string are not anagram string.");
+                    }
+                    Console.ReadLine();
                     break;
                 default:
                     break;
