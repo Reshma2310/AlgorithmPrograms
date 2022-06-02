@@ -5,7 +5,7 @@ namespace AlgorithamProblems
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. Bubble Sort\n5. End the Program");
+            Console.WriteLine("Select an Option\n1. Permutations of a String\n2. Binary Search\n3. Insertion Sort\n4. Bubble Sort\n5. Merge Sort\n6. End the Program");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -72,10 +72,17 @@ namespace AlgorithamProblems
                     Console.WriteLine("Sorted array");
                     bubble.printArray(array);
                     break;
+                case 5:
+                    AlgorithmPrograms.MergeSort merge = new AlgorithmPrograms.MergeSort();                    
+                    int[] inputArr = { 212, 63, 513, 55, 86, 6 };
+                    merge.PrintArray(inputArr);
+                    merge.sort(inputArr, 0, inputArr.Length - 1);
+                    Console.WriteLine("\nSorted array");
+                    merge.PrintArray(inputArr);
+                    break;
                 default:
                     break;
-            }
-            
+            }           
         }
     }
 }
